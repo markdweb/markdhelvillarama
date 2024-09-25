@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "@/components/ui/Link";
-import { allPosts, allProjects } from ".contentlayer/generated"; // Import posts and projects data
+import { allPosts, allProjects } from ".contentlayer/generated";
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 import Avatar from "@/public/picProfile.png";
 import PostList from "./blog/components/ui/PostList";
@@ -44,9 +44,9 @@ export default async function Home() {
           className="max-w-lg leading-relaxed text-secondary"
           style={{ "--index": 2 } as React.CSSProperties}
         >
-          Hi, I'm Mark Dhel, a software engineer who loves building cool things
-          with code. In addition, I specialize in backend and frontend work and
-          am currently learning UX/UI design too.
+          Hi, I&apos;m Mark Dhel, a software engineer who loves building cool things
+        with code. In addition, I specialize in backend and frontend work and
+        am currently learning UX/UI design too.
         </p>
       </div>
 
