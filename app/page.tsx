@@ -48,8 +48,35 @@ export default async function Home() {
         with code. In addition, I specialize in backend and frontend work and
         am currently learning UX/UI design too.
         </p>
+        <div
+          className="flex animate-in gap-3 text-sm"
+          style={{ "--index": 2 } as React.CSSProperties}
+        >
+          <Link
+            href="./Villarama-MarkDhel_Resume.pdf"
+            className="flex w-fit items-center rounded-full bg-secondary px-3 py-1 no-underline hover:bg-tertiary"
+          >
+            Resume
+            <ArrowUpRightIcon className="h-4 w-4 text-tertiary" />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/markdhelvillarama/"
+            className="flex w-fit items-center rounded-full bg-secondary px-3 py-1 no-underline hover:bg-tertiary"
+          >
+            Linkedin
+            <ArrowUpRightIcon className="h-4 w-4 text-tertiary" />
+          </Link>
+          <Link
+            className="flex w-fit items-center rounded-full bg-secondary px-3 py-1 no-underline hover:bg-tertiary"
+            href="https://github.com/markdweb"
+          >
+            Github
+            <ArrowUpRightIcon className="h-4 w-4 text-tertiary" />
+          </Link>
+        </div>
       </div>
 
+     
       <div
         className="flex animate-in flex-col gap-8"
         style={{ "--index": 4 } as React.CSSProperties}

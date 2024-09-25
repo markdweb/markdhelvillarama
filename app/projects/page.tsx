@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { allProjects, Project } from ".contentlayer/generated";
 import Halo from "@/components/ui/Halo";
 import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
-import { Squares2X2Icon } from "@heroicons/react/24/outline";
+import { ListBulletIcon } from "@heroicons/react/24/outline";
 import { metadata } from "./metadata";
 import Footer from "@/components/Footer";
 
@@ -82,7 +82,7 @@ export default function Blog() {
           onClick={toggleShowAllProjects}
           title="Show All"
         >
-          <Squares2X2Icon className="h-8 w-8" />
+          <ListBulletIcon className="h-8 w-8" />
         </button>
         </div>
           {renderProjects.length === 0 && <p>No projects found</p>}
