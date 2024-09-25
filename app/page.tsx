@@ -1,26 +1,28 @@
 import Image from "next/image";
 import Link from "@/components/ui/Link";
-import { allPosts } from ".contentlayer/generated";
+import { allPosts, allProjects } from ".contentlayer/generated"; // Import posts and projects data
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 import Avatar from "@/public/picProfile.png";
 import PostList from "./blog/components/ui/PostList";
 import Footer from "@/components/Footer";
-import BentoGrid from "@/components/bento/BentoGrid";
-
+import ProjectList from "./projects/components/ProjectList";
 
 export default async function Home() {
+  // Sorting posts by published date and selecting the 3 most recent
   const posts = allPosts
     .sort(
       (a, b) =>
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
     )
-    // 3 most recent
     .filter((_, i) => i < 3);
+
+  // Fetch or use imported projects data and limit to 4
+  const projects = allProjects.slice(0, 4);
 
   return (
     <div className="flex flex-col gap-16 md:gap-24">
       <div className="flex flex-col gap-8 animate-in">
-      <div
+        <div
           className="animate-in flex flex-col md:flex-row gap-6 text-secondary md:items-center"
           style={{ "--index": 1 } as React.CSSProperties}
         >
@@ -30,30 +32,32 @@ export default async function Home() {
             height={85}
             alt="avatar"
             className="rounded-full bg-secondary"
-          /> 
+          />
         </div>
         <div>
           <h1 className="animate-in text-3xl font-bold tracking-tight text-primary">
-            Mark Dhel Villarama
+            hey, Mark here!
           </h1>
         </div>
-        
+
         <p
           className="max-w-lg leading-relaxed text-secondary"
           style={{ "--index": 2 } as React.CSSProperties}
         >
-          Hi Im Mark Dhel a software engineer who loves building cool things with code.
-          In addition I am specializes at backends and front end stuff.
-          Currently learning UX/UI design too.
+          Hi, I'm Mark Dhel, a software engineer who loves building cool things
+          with code. In addition, I specialize in backend and frontend work and
+          am currently learning UX/UI design too.
         </p>
-        
-      </div>  
-      <div
-        className="animate-in"
-        style={{ "--index": 3 } as React.CSSProperties}
-      >
-        <BentoGrid />
       </div>
+
+      <div
+        className="flex animate-in flex-col gap-8"
+        style={{ "--index": 4 } as React.CSSProperties}
+      >
+        <p className="tracking-tight text-secondary">Pinned Projects</p>
+        <ProjectList projects={projects} />
+      </div>
+
       <div
         className="flex animate-in flex-col gap-8"
         style={{ "--index": 4 } as React.CSSProperties}
@@ -70,9 +74,11 @@ export default async function Home() {
             I occasionally write about programming, productivity, and more.
           </p>
         </div>
-        <PostList posts={posts} />
+        <PostList posts={posts} /> 
       </div>
+
       <Footer />
     </div>
   );
 }
+
