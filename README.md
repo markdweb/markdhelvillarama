@@ -7,7 +7,7 @@ My personal portfolio website designed to be simplistic and clean while includin
 backend:
 - [Next.js](nextjs.org) / TypeScript
 - [MDX](https://mdxjs.com) / [Contentlayer](https://contentlayer.dev/) (Blog Posts)
-- [PlanetScale](http://planetscale.com) (Database)
+- [Xata](https://xata.io/) (Database - Postgres)
 - [Prisma](https://www.prisma.io) (ORM)
 
 frontend:
